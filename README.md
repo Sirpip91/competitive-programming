@@ -20,9 +20,9 @@ Goal of this repository is to leave nothing out of my journey and document every
 * I will be using C++ to solve problems.
 Ranking will be based on Codeforces.
 Sites will include:
-*Codeforces
-*Codechef
-*SPOJ
-*any other site
+<br>* Codeforces
+<br>* Codechef
+<br>* SPOJ
+<br>* any other site
 
 https://codeforces.com/profile/Sirpip
