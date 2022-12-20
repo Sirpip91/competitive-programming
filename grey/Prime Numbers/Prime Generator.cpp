@@ -1,38 +1,44 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+//cool prime checker helper function
+bool isPrime(int n)
+{
+	if(n<2) return false;
+	if(n ==2) return true;
+	if(n%2==0)return false;
+
+	for(int i = 3; i*i <=n; i+=2)
+	{
+		if(n %i ==0) return false;
+	}
+
+	return true;
+}
 //prime number gen from low to high
 int main()
 {
-	//we have low high as well as prime checker
-	int low, high, t;
-	bool isprime = false;
+
+	int t;
 
 	cin >> t;
 
 	while(t--)
 	{
-		cin >> low >> high;
-		//start at low end at high
-		for(int i = low; i<=high; i++)
+	
+	int a, b;
+	cin>> a >>b;
+
+	for(int i = a; i<=b; i++)
+	{
+		if(isPrime(i))
 		{
-			//set prime to true
-			isprime = true;
-			//go through all sqrt of i starting at 2
-			for(int j = 2; j<=sqrt(i); j++)
-			{
-				//if i mod j is 0 this means its not prime
-				if(i % j == 0)
-				{
-					isprime = false;
-					break;
-				}
-			}
-			//
-			if(isprime == true && i!=1)
-				cout << i << endl;
+			cout << i << " " << endl;
 		}
-		cout << endl;
 	}
+	
+	
+	}	
+	
 	return 0;
 }
