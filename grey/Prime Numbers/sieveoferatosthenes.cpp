@@ -8,26 +8,34 @@ using namespace std;
 //sieve eratosthenes
 //O(n log log n) time
 //O(n) space
-vector<bool> sieve( int n)
-{
-	vector<bool> sieve(n+1, true);
-	sieve[0] = false;
-	sieve[1] = false;
+
+
+// Time complexity O(n log log n)
+vector<bool> sieve(int n)
+{	
+	//primes are index and value is t | f
+	vector<bool> v(n+1, true);
+	v[0] = false;
+	v[1] = false;
 	
-	for(int i = 2; i * i <=n; i=i+1)
+	for(int  i= 2; i*i<=n; i++)
 	{
-		//if i a prime
-		if(sieve[i] == true)
+		if(v[i])
 		{
-			//mark the multiples as not prime
 			for(int j = i*i; j<=n; j = j+i)
-			{
-				sieve[j] = false;
-			}
+				v[j] = false;
+		}
+	}
+		//outputs all primes
+	for(int i = 2; i<=n; i++)
+	{
+		if(v[i])
+		{
+			cout << i << " ";
 		}
 	}
 
-	return sieve;
+	return v;
 }
 
 void simpleSieve(int limit, vector<int> &prime)
